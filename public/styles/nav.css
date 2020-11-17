@@ -1,0 +1,19 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  color: #FFFF;
+}
+
+span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  margin: 1.5em;
+}
+
+.title {
+  font-family: "Bungee", sans-serif;
+}
