@@ -1,16 +1,17 @@
 nav {
-  height: 120px;
+  height: 100px;
   width: 100%;
   background-color: #4056a1;
   color: #FFFF;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+
 }
 
 span {
   display: flex;
   justify-content: space-between;
-}
-
-.navbar {
   margin: 1.5em;
 }
 

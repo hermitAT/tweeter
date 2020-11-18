@@ -36,27 +36,15 @@ main {
   background-color: #f4f1ec;
 }
 
+/*
+* ^^ Stylize the spacing and background colour of main container ^^
+*/
+
 .tweet-container {
   display: flex;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-article:hover {
-  display: flex;
-  box-shadow: 5px 5px 5px cornflowerblue;
-  opacity: 1;
-}
-
-.handle {
-  display: none;
-}
-
-article:hover .handle {
-  display: flex;
-  color: cornflowerblue;
-  opacity: 0.5;
 }
 
 article {
@@ -67,6 +55,10 @@ article {
   padding: 10px;
   opacity: 0.75;
 }
+
+/*
+* ^^ stylize the container for each tweet to be displayed within the main ^^
+*/
 
 .tweet-header {
   display: flex;
@@ -98,3 +90,28 @@ article {
   display: flex;
   justify-content: space-around;
 }
+
+/*
+* ^^ stylize the header, body, and footer of the tweet displayed in the container. ^^
+* spacing, colors, and opacity to match the example
+*/
+
+article:hover {
+  display: flex;
+  box-shadow: 5px 5px 5px cornflowerblue;
+  opacity: 1;
+}
+
+.handle {
+  display: none;
+}
+
+article:hover .handle {
+  display: flex;
+  color: cornflowerblue;
+  opacity: 0.5;
+}
+
+/*
+* ^^ hover stylizations, increase the opacity, add box shadow, and display the 'tweeter handle' of the user when the container is hovered
+*/
