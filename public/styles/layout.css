@@ -35,3 +35,66 @@ main {
   justify-content: center;
   background-color: #f4f1ec;
 }
+
+.tweet-container {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+article:hover {
+  display: flex;
+  box-shadow: 5px 5px 5px cornflowerblue;
+  opacity: 1;
+}
+
+.handle {
+  display: none;
+}
+
+article:hover .handle {
+  display: flex;
+  color: cornflowerblue;
+  opacity: 0.5;
+}
+
+article {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border: 3px solid #545149;
+  padding: 10px;
+  opacity: 0.75;
+}
+
+.tweet-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.tweet-body {
+  display: flex;
+  width: 100%;
+  height: 75px;
+  font-size: 90%;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #545149;
+}
+
+.tweet-footer {
+  display: flex;
+  width: 100%;
+  flex-shrink: 2;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 50%;
+}
+
+.tweet-footer.tweet-buttons {
+  display: flex;
+  justify-content: space-around;
+}
