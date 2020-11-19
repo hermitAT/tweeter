@@ -4,8 +4,8 @@ header {
   width: 100%;
   align-items: center;
   flex-direction: column;
-  background-color: #f6acf7;
-  background-image: url("/images/cartographer.png");
+  background-color: #fa81fc;
+  background-image: url("/images/dust.png");
 }
 
 .name {

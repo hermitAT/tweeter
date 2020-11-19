@@ -44,10 +44,10 @@ main {
   display: flex;
   width: 100%;
   flex-direction: column;
-  border: 3px solid #545149;
+  border: 3px solid #7e7a6e;
   padding: 10px;
-  opacity: 0.6;
   margin-bottom: 25px;
+  color: #7e7a6e
 }
 
 /*
@@ -79,7 +79,7 @@ main {
   height: 75px;
   font-size: 90%;
   align-items: center;
-  border-bottom: 3px solid #545149;
+  border-bottom: 3px solid #7e7a6e;
 }
 
 #tweet-container .tweet-content data {
@@ -119,14 +119,19 @@ main {
 
 #tweet-container article:hover {
   display: flex;
-  box-shadow: 5px 5px 5px cornflowerblue;
-  opacity: 1;
+  box-shadow: 5px 5px 5px rgb(69, 187, 255);
+  color: #545149;
+  border: 3px solid #545149;
+}
+
+#tweet-container article:hover .tweet-content {
+  display: flex;
+  border-bottom: 3px solid #545149;
 }
 
 #tweet-container article:hover .handle {
   display: flex;
-  color: cornflowerblue;
-  opacity: 0.5;
+  color: rgb(69, 187, 255);
 }
 
 /*
