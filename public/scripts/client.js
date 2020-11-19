@@ -86,5 +86,36 @@ $(document).ready(function() {
   ];
 
   renderTweets(data);
-  
+
+  $('.submit').on('click', function(event) {
+
+    event.preventDefault();
+    // prevent default form submission behavior
+
+    let $textarea = $(this).closest('form').find('#tweet-text');
+    let $counter = $(this).closest('form').find('.counter');
+    let $labelMsg = $(this).closest('form').find('label');
+    
+    let $queryString = $textarea.serialize();
+    let $tweetMsg = $textarea.val();
+    let $tweetLngth = $tweetMsg.length;
+
+    if (!$tweetMsg || $tweetLngth === 0) {
+      $labelMsg.text("Your tweet is empty...").toggle(true);
+      $textarea.focus();
+    } else if ($tweetLngth > 140) {
+      $labelMsg.text("Your tweet exceeds the maximum character limit...").toggle(true);
+      $textarea.focus();
+    } else {
+      $.ajax("/tweets", $queryString)
+        .done(function() {
+          console.log($queryString);
+        });
+        
+      $labelMsg.text('What are you humming about?').toggle(true);
+      $textarea.val('').focus();
+      $counter.text('140');
+        
+    }
+  });
 });

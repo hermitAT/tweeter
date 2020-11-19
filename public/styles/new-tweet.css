@@ -16,14 +16,14 @@
   background-color: #f4f1ec;
 }
 
-.button-counter {
+.form-footer {
   display: flex;
   padding-top: 10px;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
 }
 
-.tweet {
+.submit {
   background-color: #4056a1;
   color: #FFFF;
 }

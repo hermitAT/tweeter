@@ -47,7 +47,7 @@ main {
   border: 3px solid #545149;
   padding: 10px;
   opacity: 0.6;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 /*
@@ -64,7 +64,7 @@ main {
 
 #tweet-container .user-data .profile {
   display: flex;
-  width: 25%;
+  width: 23%;
   align-items: center;
   justify-content: space-around;
 }

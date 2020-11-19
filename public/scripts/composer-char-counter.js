@@ -5,7 +5,6 @@ $(document).ready(function() {
     let $text = $(this).val();
     let $charLeft = 140 - $text.length;
     // get value of text entered in textarea, get the length of that text, && subtract that value from 140
-    console.log($charLeft);
 
     let $updateCount = $(this).closest("form").find(".counter");
     $updateCount.text($charLeft);
