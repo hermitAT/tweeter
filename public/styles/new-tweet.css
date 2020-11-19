@@ -1,9 +1,12 @@
 .new-tweet {
   display: flex;
   width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  margin-bottom: 25px;
   flex-direction: column;
+}
+
+.new-tweet h5 {
+  color: red;
 }
 
 #tweet-text {
@@ -23,7 +26,7 @@
   font-family: "Bungee", sans-serif;
 }
 
-.submit {
+.form-footer.submit {
   background-color: #4056a1;
   color: #FFFF;
 }

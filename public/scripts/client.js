@@ -91,7 +91,7 @@ $(document).ready(function() {
 
     let $textarea = $(this).closest('form').find('#tweet-text');
     let $counter = $(this).closest('form').find('.counter');
-    let $labelMsg = $(this).closest('form').find('label');
+    let $validationError = $(this).closest('form').find('h5');
     // ^^ create variables pointing to pieces the .next-tweet form, to allow for tweet creation from form input
     
     let $queryString = $textarea.serialize();
@@ -102,18 +102,19 @@ $(document).ready(function() {
 
     // below are conditionals that check if textarea was empty, was over the maxChar limit, or if message is able to be posted.
     if ($tweetLngth === 0) {
-      $labelMsg.text("Your tweet is empty...").toggle(true);
+      $validationError.text("Sorry, you can't send an empty tweet!").slideDown(500);
       $textarea.focus();
     } else if ($tweetLngth > 140) {
-      $labelMsg.text("Your tweet exceeds the maximum character limit...").toggle(true);
+      $validationError.text("Sorry, your tweet exceeds our maximum character limit!").slideDown(500);
       $textarea.focus();
     } else {
       $.post("/tweets", $queryString)
         .done(function() {
+          $('#tweet-container').empty();
           loadTweets();
         });
       // above code posts message to tweet if valid and code below sets form variables back to default...
-      $labelMsg.text('What are you humming about?').toggle(true);
+      $validationError.text('');
       $textarea.val('').focus();
       $counter.text('140');
     }
