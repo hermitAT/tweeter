@@ -147,7 +147,7 @@ body {
 * code below allows app to be responsive to different media types. Initial css styles for use on desktop at 1024px..
 */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   body .responsive-main {
     display: flex;
     flex-direction: row;

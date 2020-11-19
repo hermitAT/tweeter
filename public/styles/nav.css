@@ -19,7 +19,7 @@ span {
   font-family: "Bungee", sans-serif;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   nav {
     background-color: #ad38af;
     background-image: url("/images/dust.png");

@@ -13,7 +13,7 @@ header .name {
   color: #FFFF;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   header {
     display: flex;
     width: 50%;
