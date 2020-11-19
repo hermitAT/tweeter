@@ -33,30 +33,27 @@
         <div>Write a new tweet</div>
       </span>
     </nav>
-    <header>
-      <div>
+    <div class="responsive-main">
+      <header>
         <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
         <h2 class="name">Adam Thorne</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <form action="/tweets" method="POST">
-          <h5></h5>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="form-footer">
-            <input class="submit" type="submit" value="Tweet">
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section id="tweet-container">
-      </section>
-    </main>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main id="container">
+        <section class="new-tweet">
+          <form action="/tweets" method="POST">
+            <h5></h5>
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="form-footer">
+              <input class="submit" type="submit" value="Tweet">
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section id="tweet-container">
+        </section>
+      </main>
+    </div>
   </body>
 </html>

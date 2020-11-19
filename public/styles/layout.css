@@ -28,12 +28,13 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
+.responsive-main main {
   display: flex;
   width: 90%;
   flex-direction: column;
   justify-content: space-between;
   background-color: #f4f1ec;
+  margin-left: 5%;
 }
 
 /*
@@ -73,6 +74,10 @@ main {
   margin-right: 15px;
 }
 
+/* ^^ stylize the avatar, user name and handle displayed within the tweet article
+* 
+*c ss below styles the content of the tweet, and adds a pseudo-linebreak before the footer by creating a bottom border
+*/
 #tweet-container .tweet-content {
   display: flex;
   width: 100%;
@@ -86,6 +91,10 @@ main {
   display: flex;
   margin: 15px;
 }
+
+/*
+* css below styles the footer, and buttons within the footer..
+*/
 
 #tweet-container footer {
   display: flex;
@@ -109,8 +118,8 @@ main {
 }
 
 /*
-* ^^ stylize the header, body, and footer of the tweet displayed in the container. ^^
-* spacing, colors, and opacity to match the example
+* css below outlines rules to follow when article is hovered, changing display of handle and darkening the colors and borders..
+* add box shadow and some blur as well to that shadow when hovered..
 */
 
 #tweet-container .handle {
@@ -135,5 +144,19 @@ main {
 }
 
 /*
-* ^^ hover stylizations, increase the opacity, add box shadow, and display the 'tweeter handle' of the user when the container is hovered
+* code below allows app to be responsive to different media types. Initial css styles for use on desktop at 1024px..
 */
+
+@media only screen and (min-width: 768px) {
+  body .responsive-main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #container {
+    display: flex;
+    width: 80vw;
+    flex-grow: 3;
+    margin-right: 5%;
+  }
+}

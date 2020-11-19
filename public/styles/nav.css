@@ -1,11 +1,12 @@
 nav {
   height: 100px;
-  width: 100%;
+  width: 100vw;
   background-color: #4056A1;
   color: #FFFF;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  margin-bottom: 2%;
 }
 
 span {
@@ -16,4 +17,12 @@ span {
 
 .title {
   font-family: "Bungee", sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #ad38af;
+    background-image: url("/images/dust.png");
+    margin: 0;
+  }
 }
