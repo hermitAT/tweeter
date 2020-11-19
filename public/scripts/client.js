@@ -26,7 +26,6 @@ $(document).ready(function() {
     }
   };
 
-
   const createTweetElement = function(tweet) {
     const { user, content, created_at } = tweet;
     // ^^ destructure object for shorter/more readable template literals
@@ -47,45 +46,31 @@ $(document).ready(function() {
         <footer>
           <a>${differenceInDays(created_at)}</a>
           <div class="tweet-buttons">
-            <button class="tweet" type="submit">F</button>
-            <button class="tweet" type="submit">R</button>
-            <button class="tweet" type="submit">L</button>
+            <button class="tweet" type="submit"><img src="./images/flag.png"></button>
+            <button class="tweet" type="submit"><img src="./images/retweet.png"></button>
+            <button class="tweet" type="submit"><img src="./images/heart.png"></button>
           </div>
         </footer>
       </article>
   `);
-    // ^^ return for button implementation, unsure of date function implementation either
+    // ^^ template used to dynamically create tweets...
 
     return $tweet;
   };
 
-  // test/driver code ~~~~
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
 
-  renderTweets(data);
+  const loadTweets = function() {
+
+    $.ajax('http://localhost:8080/tweets')
+      .then((res) => {
+        renderTweets(res);
+      });
+  };
+  // ~~~~~~~~~~~~ ^^ use AJAX to fetch tweets from the /tweets page ~~~~~~~~~~~~~~~~~
+
+  loadTweets();
+
+  // ~~~~~~~~~~~~ ^^ call function to load initial set of tweets to page ~~~~~~~~~~~~
 
   $('.submit').on('click', function(event) {
 
@@ -95,12 +80,16 @@ $(document).ready(function() {
     let $textarea = $(this).closest('form').find('#tweet-text');
     let $counter = $(this).closest('form').find('.counter');
     let $labelMsg = $(this).closest('form').find('label');
+    // ^^ create variables pointing to pieces the .next-tweet form, to allow for tweet creation from form input
     
     let $queryString = $textarea.serialize();
     let $tweetMsg = $textarea.val();
     let $tweetLngth = $tweetMsg.length;
+    // ^^ serialize into a query string for use by our server
+    // find content/value in text form of textarea of the form, and find length of that text;
 
-    if (!$tweetMsg || $tweetLngth === 0) {
+    // below are conditionals that check if textarea was empty, was over the maxChar limit, or if message is able to be posted.
+    if ($tweetLngth === 0) {
       $labelMsg.text("Your tweet is empty...").toggle(true);
       $textarea.focus();
     } else if ($tweetLngth > 140) {
@@ -111,11 +100,10 @@ $(document).ready(function() {
         .done(function() {
           console.log($queryString);
         });
-        
+      // above code posts message to tweet if valid and code below sets form variables back to default...
       $labelMsg.text('What are you humming about?').toggle(true);
       $textarea.val('').focus();
       $counter.text('140');
-        
     }
   });
 });

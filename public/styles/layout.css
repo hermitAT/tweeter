@@ -94,14 +94,14 @@ main {
 
 #tweet-container footer .tweet-buttons {
   display: flex;
-  width: 15%;
+  width: 20%;
   justify-content: space-around;
 }
 
 #tweet-container footer .tweet-buttons.tweet {
   display: flex;
-  opacity: 0.4;
-  background-color: cornflowerblue;
+  width: 100%;
+  outline: none;
 }
 
 /*
