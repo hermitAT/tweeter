@@ -5,14 +5,25 @@
  */
 
 const differenceInDays = function(created_at) {
+  // create date objects from created_at value and today's date;
+  const dateNow = new Date();
+  const createdAtDate = new Date(created_at);
+  const timeDiff = Math.abs(dateNow - createdAtDate);
+  // ^^ find absolute integer between today's date and the date created at
+  const differenceInDays = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+  // ^^ find difference in days by dividing timeDiff by milliseconds/seconds/minutes/hours
+  // make sure to round to zero decimal places by using toFixed(0)
 
-  const createdDate = new Date(created_at);
-  // ^^ create Date object to represent the created_at milliseconds
-  const createdDays = createdDate.getDay();
-  // ^^ get number of days from created date object;
-  return createdDays + " days ago";
+  return differenceInDays.toFixed(0) + " days ago";
 };
 // ^^ return to this function ...
+
+const escape = function(string) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(string));
+  return div.innerHTML;
+};
+// ^^ escape function to prevent XSS ~~
 
 $(document).ready(function() {
 
@@ -30,6 +41,8 @@ $(document).ready(function() {
     const { user, content, created_at } = tweet;
     // ^^ destructure object for shorter/more readable template literals
 
+    let safeHTML = `<data>${escape(content.text)}</data>`;
+
     // using template created previously, add template literals to implement dynamic element creation
     const $tweet = $(`
       <article>
@@ -41,7 +54,7 @@ $(document).ready(function() {
           <a class="handle">${user.handle}</a>
         </div>
         <div class="tweet-content">
-          <data>${content.text}</data>
+          ${safeHTML}
         </div>
         <footer>
           <a>${differenceInDays(created_at)}</a>
@@ -58,10 +71,9 @@ $(document).ready(function() {
     return $tweet;
   };
 
-
   const loadTweets = function() {
 
-    $.ajax('http://localhost:8080/tweets')
+    $.ajax('/tweets')
       .then((res) => {
         renderTweets(res);
       });
@@ -83,7 +95,7 @@ $(document).ready(function() {
     // ^^ create variables pointing to pieces the .next-tweet form, to allow for tweet creation from form input
     
     let $queryString = $textarea.serialize();
-    let $tweetMsg = $textarea.val();
+    let $tweetMsg = $textarea.val().trim();
     let $tweetLngth = $tweetMsg.length;
     // ^^ serialize into a query string for use by our server
     // find content/value in text form of textarea of the form, and find length of that text;
@@ -96,9 +108,9 @@ $(document).ready(function() {
       $labelMsg.text("Your tweet exceeds the maximum character limit...").toggle(true);
       $textarea.focus();
     } else {
-      $.ajax("/tweets", $queryString)
+      $.post("/tweets", $queryString)
         .done(function() {
-          console.log($queryString);
+          loadTweets();
         });
       // above code posts message to tweet if valid and code below sets form variables back to default...
       $labelMsg.text('What are you humming about?').toggle(true);

@@ -64,9 +64,13 @@ main {
 
 #tweet-container .user-data .profile {
   display: flex;
-  width: 23%;
+  width: auto;
   align-items: center;
-  justify-content: space-around;
+}
+
+#tweet-container .user-data .profile img {
+  display: flex;
+  margin-right: 15px;
 }
 
 #tweet-container .tweet-content {
