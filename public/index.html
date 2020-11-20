@@ -25,14 +25,18 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/compose.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>
-        <div class="title">tweeter</div>
-        <div><b>Write</b> a new tweet</div>
+        <h1>tweeter</h1>
+        <div class="compose">
+          <div>Write a new tweet</div>
+          <input type="submit" value="compose">
+        </div>
       </span>
     </nav>
     <div class="responsive-main">
@@ -42,7 +46,7 @@
       </header>
       <!-- Page-specific (main) content here -->
       <main id="container">
-        <section class="new-tweet">
+        <section class="new-tweet hidden">
           <form action="/tweets" method="POST">
             <h5 class="red-font"></h5>
             <label for="tweet-text">What are you humming about?</label>

@@ -14,14 +14,32 @@ nav {
 
   span {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin: 25px;
-  }
-  // use space-between to max distance from L-R for tweeter logo and 'write' button, with margin to space from sides
-
-  .title {
+    margin-right: 25px;
+    // use space-between to max distance from L-R for tweeter logo and 'write' button, with margin to space from sides
+    
+    h1 {
     font-family: variables.$font-stack-bung;
+    margin-left: 25px;
     // ^^ give tweeter logo Bungee font
+    }
+  }
+
+  .compose {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    input {
+      margin-top: 7.5px;
+      background-color: variables.$error-color;
+      border: none;
+      color: variables.$text-color;
+      font-family: variables.$font-stack-bung;
+      cursor: pointer;
+    }
   }
 }
 

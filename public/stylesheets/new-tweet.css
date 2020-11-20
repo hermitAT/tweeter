@@ -1,3 +1,7 @@
+.new-tweet.hidden {
+  display: none;
+}
+
 .new-tweet {
   display: flex;
   width: 100%;
@@ -22,6 +26,7 @@
 .new-tweet footer .submit {
   background-color: #4056A1;
   color: #FFFFFF;
+  cursor: pointer;
 }
 .new-tweet .red-font {
   color: #8a0000;

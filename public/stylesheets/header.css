@@ -6,6 +6,7 @@ header {
   flex-direction: column;
   background-color: #ad38af;
   background-image: url("/images/dust.png");
+  margin-bottom: 20px;
 }
 header h3 {
   margin: 0;

@@ -11,11 +11,27 @@ nav {
 }
 nav span {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin: 25px;
+  margin-right: 25px;
 }
-nav .title {
+nav span h1 {
   font-family: "Bungee", sans-serif;
+  margin-left: 25px;
+}
+nav .compose {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+nav .compose input {
+  margin-top: 7.5px;
+  background-color: #8a0000;
+  border: none;
+  color: #FFFFFF;
+  font-family: "Bungee", sans-serif;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1024px) {

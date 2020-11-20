@@ -10,7 +10,7 @@ $(document).ready(function() {
     $updateCount.text($charLeft);
     // ^^ find counter within parent element, set the counter-text to equal the computed value
 
-    if ($charLeft <= 0) {
+    if ($charLeft < 0) {
       $updateCount.addClass("red-font");
     } else {
       $updateCount.removeClass("red-font");

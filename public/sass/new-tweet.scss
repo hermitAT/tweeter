@@ -28,6 +28,7 @@
     .submit {
       background-color: variables.$navbar-blue;
       color: variables.$text-color;
+      cursor: pointer;
       // ^^ set tweet button to same color-scheme as navbar (when navbar is viewed on desktop, anyway)
     }
   }
