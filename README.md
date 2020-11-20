@@ -4,6 +4,8 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses JavaScript, 
 
 Tweeter offers a responsive design that allows the single-page application to flow smoothly between screen resolutions, allowing users to have a similar experience no matter the size of their screen. Features include a toggle, which when clicked brings a form into view and focus, used to compose new tweets and post them into the container, refreshing the form and the tweet container once the post passes validation.
 
+## Screenshots
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
@@ -13,5 +15,8 @@ Tweeter offers a responsive design that allows the single-page application to fl
 
 ## Dependencies
 
-- Express
+- Express 4.13.4
 - Node 5.10.x or above
+- Body-parser 1.15.2
+- Chance 1.0.2
+- md5 2.1.0
