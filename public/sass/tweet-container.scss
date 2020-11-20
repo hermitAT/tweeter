@@ -1,0 +1,76 @@
+@use 'variables';
+
+#tweet-container article {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border: 3px solid variables.$muted-color;
+  padding: 10px;
+  margin-bottom: 25px;
+  color: variables.$muted-color;
+  // ^^ sort article contents in columns, with muted border and colors until article:hover event is triggered
+
+  .user-data {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    // ^^ spread the user data w/ space-between, with avatar+name on left and the @handle on right, width at 95% to give space
+
+    .profile {
+      display: flex;
+      width: auto;
+      align-items: center;
+      // ^^ align the center of the avatar and name within the .user-data row
+
+      img {
+        display: flex;
+        margin-right: 15px;
+      }
+      // ^^ give img a margin to seperate the avatar/user name
+    }
+    .handle {
+      display: none;
+    }
+    // ^^ do not display @_ handle until article:hover event is triggered
+  }
+
+  .tweet-content {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    font-size: 90%;
+    align-items: center;
+    border-bottom: 3px solid variables.$muted-color;
+    // ^^ center content with a border below acting as a pseudo-linebreak that matches the style of the border
+
+    data {
+      display: flex;
+      margin: 15px;
+    }
+    // ^^ give tweet content a slight margin away from where the bottom border begins
+  }
+
+  footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 50%;
+    // ^^ space the footer with 'days ago' on left and buttons on right, reduce font-size and give padding away from the border above
+
+    .tweet-buttons {
+      display: flex;
+      width: 20%;
+      justify-content: space-around;
+      // ^^ give buttons some slight spacing, spacing will flex as resolution changes based on 20% of parent container
+
+      input {
+        display: none;
+        // ^^ buttons do not appear until hovered...
+      }
+    }
+  }
+}

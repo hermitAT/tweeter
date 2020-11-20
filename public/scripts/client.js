@@ -59,9 +59,9 @@ $(document).ready(function() {
         <footer>
           <a>${differenceInDays(created_at)}</a>
           <div class="tweet-buttons">
-            <button class="tweet" type="submit"><img src="./images/flag.png"></button>
-            <button class="tweet" type="submit"><img src="./images/retweet.png"></button>
-            <button class="tweet" type="submit"><img src="./images/heart.png"></button>
+            <input type="submit" value="🌀">
+            <input type="submit" value="🔷">
+            <input type="submit" value="💙">
           </div>
         </footer>
       </article>

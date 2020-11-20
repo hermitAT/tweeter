@@ -1,0 +1,38 @@
+@use 'variables';
+
+// desktop resolution is base resolution, shrink down onto tablet size @ tablet-breakpoint of 1024px
+
+header {
+  display: flex;
+  height: 350px;
+  width: 100vw;
+  align-items: center;
+  flex-direction: column;
+  background-color: variables.$primary-color;
+  background-image: url("/images/dust.png");
+  // ^^ center the header image, with name right below sorted as column. 
+  // bring in background texture and primary colour for use on tablet version navbar too
+  // width set to 100vw to always stay max view as desktop resolution grows/shrinks until we hit tablet resolution.
+
+  h3 {
+    margin: 0;
+    color: variables.$text-color;
+    // ^^ allow h3 to rest right below the img, with text color matching the rest of text on navbar/header area
+  }
+}
+
+@media only screen and (min-width: variables.$tablet-breakpoint) {
+  header {
+    display: flex;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 5%;
+    // ^^ box the header is in will slightly grow as resolution changes, but not as much as other elements on page
+  
+    img {
+      display: flex;
+      margin-top: 5%;
+    }
+    // ^^ give img slight margin from top, centering it within the box
+  }
+}

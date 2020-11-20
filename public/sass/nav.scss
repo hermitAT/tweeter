@@ -1,0 +1,35 @@
+@use 'variables';
+
+nav {
+  height: 100px;
+  width: 100vw;
+  background-color: variables.$navbar-blue;
+  color: variables.$text-color;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  margin-bottom: 2%;
+  font-family: variables.$font-stack-source;
+  // set navbar to sticky, set base color and set font for 'write' button
+
+  span {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+  }
+  // use space-between to max distance from L-R for tweeter logo and 'write' button, with margin to space from sides
+
+  .title {
+    font-family: variables.$font-stack-bung;
+    // ^^ give tweeter logo Bungee font
+  }
+}
+
+@media only screen and (max-width: variables.$tablet-breakpoint) {
+  nav {
+    background-color: variables.$primary-color;
+    background-image: url("/images/dust.png");
+    margin: 0;
+    // ^^ when hit tablet sizing, match navbar color-scheme to that of header, and reduce margin to merge navbar&header
+  }
+}

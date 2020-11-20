@@ -1,0 +1,29 @@
+@use 'variables';
+
+#tweet-container article:hover {
+  display: flex;
+  box-shadow: 5px 5px 5px variables.$hover-blue;
+  color: variables.$hover-color;
+  border: 3px solid variables.$hover-color;
+  // ^^ un-mute colors of borders and text, and add box shadow with a lighter blue color
+
+  .handle {
+    display: flex;
+    color: variables.$hover-blue;
+  }
+  // ^^ handle appears on hover, with the same blue color as the shadow
+
+  .tweet-content {
+    display: flex;
+    border-bottom: 3px solid variables.$hover-color;
+  }
+  // ^^ as per the other color changes, 'un-mute' the colors of the borders.
+
+  .tweet-buttons input {
+    display: flex;
+    padding: 0;
+    border: none;
+    background: none;
+    // ^^ buttons appear on hover, without borders/etc. only emoji's appear as buttons!
+  }
+}

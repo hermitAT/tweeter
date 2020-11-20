@@ -4,12 +4,7 @@
   margin-bottom: 25px;
   flex-direction: column;
 }
-
-.new-tweet h5 {
-  color: red;
-}
-
-#tweet-text {
+.new-tweet textarea {
   display: flex;
   width: 100%;
   outline: 0;
@@ -18,19 +13,18 @@
   font-size: 18px;
   background-color: #f4f1ec;
 }
-
-.form-footer {
+.new-tweet footer {
   display: flex;
   padding-top: 10px;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
 }
-
-.form-footer.submit {
-  background-color: #4056a1;
-  color: #FFFF;
+.new-tweet footer .submit {
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+.new-tweet .red-font {
+  color: #8a0000;
 }
 
-.red-font {
-  color: red;
-}
+/*# sourceMappingURL=new-tweet.css.map */

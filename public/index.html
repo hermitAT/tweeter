@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@600&display=swap">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/header.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/tweet-container.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/tweet-hover.css" type="text/css" />
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,25 +32,25 @@
     <nav>
       <span>
         <div class="title">tweeter</div>
-        <div>Write a new tweet</div>
+        <div><b>Write</b> a new tweet</div>
       </span>
     </nav>
     <div class="responsive-main">
       <header>
         <img src="/images/profile-hex.png">
-        <h2 class="name">Adam Thorne</h2>
+        <h3>Adam Thorne</h3>
       </header>
       <!-- Page-specific (main) content here -->
       <main id="container">
         <section class="new-tweet">
           <form action="/tweets" method="POST">
-            <h5></h5>
+            <h5 class="red-font"></h5>
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
-            <div class="form-footer">
+            <footer>
               <input class="submit" type="submit" value="Tweet">
               <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
+            </footer>
           </form>
         </section>
         <section id="tweet-container">

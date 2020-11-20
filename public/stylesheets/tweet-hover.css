@@ -1,0 +1,22 @@
+#tweet-container article:hover {
+  display: flex;
+  box-shadow: 5px 5px 5px cornflowerblue;
+  color: #545149;
+  border: 3px solid #545149;
+}
+#tweet-container article:hover .handle {
+  display: flex;
+  color: cornflowerblue;
+}
+#tweet-container article:hover .tweet-content {
+  display: flex;
+  border-bottom: 3px solid #545149;
+}
+#tweet-container article:hover .tweet-buttons input {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/*# sourceMappingURL=tweet-hover.css.map */

@@ -1,0 +1,39 @@
+@use 'variables';
+
+.new-tweet {
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+  flex-direction: column;
+  // ^^ spread the full width of parent container, with content spread in columns
+
+  textarea {
+    display: flex;
+    width: 100%;
+    outline: 0;
+    border-width: 0 0 3px;
+    resize: none;
+    font-size: 18px;
+    background-color: variables.$background-color;
+    // ^^ give input area a bottom border, remove resize tab, set font-size for readability, and remove outline from input box to blend
+  }
+
+  footer {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+    font-family: variables.$font-stack-bung;
+    // ^^ space the footer and set font to Bungee, to make Tweeter logo in top-left
+
+    .submit {
+      background-color: variables.$navbar-blue;
+      color: variables.$text-color;
+      // ^^ set tweet button to same color-scheme as navbar (when navbar is viewed on desktop, anyway)
+    }
+  }
+
+  .red-font {
+    color: variables.$error-color;
+  }
+  // ^^ give red-color to error messages that appear from validation error or character counter errors
+}

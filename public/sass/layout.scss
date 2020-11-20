@@ -1,0 +1,45 @@
+@use 'variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: variables.$hover-color;
+  background-color: variables.$background-color;
+  font-size: 24px;
+  font-family: variables.$font-stack-source;
+  // ^^ set font-size, text colors, background colors, font-size and style, and alignment for the body as per template instructions
+
+  .responsive-main main {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    background-color: variables.$background-color;
+    margin-left: 5%;
+  }
+  // create a responsive container for use during tablet-sized window (less than 1024px)
+}
+
+@media only screen and (min-width: 1024px) {
+  body .responsive-main {
+    display: flex;
+    flex-direction: row;
+
+    #container {
+      display: flex;
+      width: 80vw;
+      flex-grow: 3;
+      margin-right: 5%;
+    }
+  }
+
+  // ^^ switch app to desktop sizing, shifting the #container with the tweets and 'compose tweet' container on the right.
+  // the tweet container is flexible to grow and shrink as the resolution increases, and margins always keep it away from side of window
+}

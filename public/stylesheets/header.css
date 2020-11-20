@@ -7,10 +7,9 @@ header {
   background-color: #ad38af;
   background-image: url("/images/dust.png");
 }
-
-header .name {
+header h3 {
   margin: 0;
-  color: #FFFF;
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -20,9 +19,10 @@ header .name {
     margin-top: 5%;
     margin-left: 5%;
   }
-
   header img {
     display: flex;
     margin-top: 5%;
   }
 }
+
+/*# sourceMappingURL=header.css.map */
