@@ -10,6 +10,7 @@ header {
   flex-direction: column;
   background-color: variables.$primary-color;
   background-image: url("/images/dust.png");
+  margin-bottom: 20px;
   // ^^ center the header image, with name right below sorted as column. 
   // bring in background texture and primary colour for use on tablet version navbar too
   // width set to 100vw to always stay max view as desktop resolution grows/shrinks until we hit tablet resolution.
