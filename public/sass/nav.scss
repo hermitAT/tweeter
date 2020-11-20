@@ -16,8 +16,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 25px;
-    // use space-between to max distance from L-R for tweeter logo and 'write' button, with margin to space from sides
+    padding-left: 40px;
+    padding-right: 40px;
+    // use space-between to max distance from L-R for tweeter logo and 'write' button, with padding to space from sides
     
     h1 {
     font-family: variables.$font-stack-bung;

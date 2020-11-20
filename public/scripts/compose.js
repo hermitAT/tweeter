@@ -8,5 +8,4 @@ $(document).ready(function() {
     $('.new-tweet').toggleClass('hidden');
     $('.new-tweet').find('textarea').focus();
   });
-
 });
